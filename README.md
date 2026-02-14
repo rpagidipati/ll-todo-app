@@ -1,5 +1,26 @@
 # ll-todo-app
 
+A todo application repository with multiple branches for feature development.
+
+## Prerequisites
+
+- **Bash** 4.0+ (for running scripts)
+- **Git** 2.20+ (for version control)  
+- **SSH key** (for GitHub authentication)
+- Optional: **GPG** (for commit signing)
+
+Note: This project uses bash shell scripts, not Node.js or Bun runtime. The `bun.sh` is an environment setup/verification script.
+
+## Quick Start
+
+Initialize your environment:
+
+```bash
+./bun.sh
+```
+
+This will verify all requirements and set up git hooks for security.
+
 Secrets and testing
 -------------------
 

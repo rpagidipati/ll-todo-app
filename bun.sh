@@ -2,6 +2,12 @@
 
 # ll-todo-app Environment Setup Script
 # Initializes and verifies the project environment
+#
+# NOTE: This script is NOT related to Bun JavaScript runtime.
+# It's a general environment verification script named "bun" (build/setup script).
+#
+# Bash version: 4.0+ required
+# System compatibility: Linux, macOS, WSL
 
 set -e
 
