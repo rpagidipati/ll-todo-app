@@ -1,10 +1,20 @@
 name: Copy Branches to Target Repo
 
+# REQUIRED SECRETS (configure in Settings > Secrets and variables > Actions):
+#   - SSH_KEY_CONTENT: Full contents of SSH private key for push authentication
+#   - GITHUB_TOKEN: GitHub Personal Access Token (if using HTTPS instead of SSH)
+# 
+# Choose ONE authentication method:
+#   1. SSH_KEY_CONTENT: Provide your ed25519 or RSA private key contents
+#   2. GITHUB_TOKEN: Provide a Personal Access Token (PAT) with repo scope
+#
+# See SECRETS.md for detailed setup instructions.
+
 on:
   workflow_dispatch:
     inputs:
       target_repo:
-        description: 'Target repository (e.g. rpagidipati/ll-todo-app)'
+        description: 'Target repository (e.g. rpagidipati/ll-todo-app or git@github.com:user/repo.git)'
         required: true
 
 jobs:
