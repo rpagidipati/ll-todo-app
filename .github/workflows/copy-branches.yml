@@ -1,0 +1,40 @@
+name: Copy Branches to Target Repo
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_repo:
+        description: 'Target repository (e.g. rpagidipati/ll-todo-app)'
+        required: true
+
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare SSH known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Run copy script
+        env:
+          SSH_KEY_CONTENT: ${{ secrets.SSH_KEY_CONTENT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # If using SSH key secret, write it to a temp file with secure perms
+          if [ -n "${SSH_KEY_CONTENT:-}" ]; then
+            printf "%s" "$SSH_KEY_CONTENT" > ~/.ssh/id_ed25519
+            chmod 600 ~/.ssh/id_ed25519
+          fi
+
+          # Target repo input supports either 'owner/repo' or full URL
+          if [[ "${{ github.event.inputs.target_repo }}" =~ ^[^:/]+/[^/]+$ ]]; then
+            TARGET="git@github.com:${{ github.event.inputs.target_repo }}.git"
+          else
+            TARGET="${{ github.event.inputs.target_repo }}"
+          fi
+
+          ./copy-repo-branches.sh "$TARGET"
