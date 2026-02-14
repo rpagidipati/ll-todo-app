@@ -1,0 +1,25 @@
+{
+  "name": "ll-todo-app",
+  "version": "1.0.0",
+  "description": "A todo application with branch management and CI/CD utilities",
+  "type": "module",
+  "scripts": {
+    "setup": "./bun.sh",
+    "test": "tests/test_copy_branches_local.sh",
+    "copy-branches": "./copy-repo-branches.sh"
+  },
+  "keywords": [
+    "todo",
+    "git",
+    "branches",
+    "ci-cd",
+    "github-actions"
+  ],
+  "author": "rpagidipati",
+  "license": "MIT",
+  "engines": {
+    "bun": ">=1.0.0",
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {}
+}

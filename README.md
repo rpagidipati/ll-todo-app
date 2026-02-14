@@ -7,9 +7,10 @@ A todo application repository with multiple branches for feature development.
 - **Bash** 4.0+ (for running scripts)
 - **Git** 2.20+ (for version control)  
 - **SSH key** (for GitHub authentication)
+- **Bun** 1.0+ (optional, for package management and script running)
 - Optional: **GPG** (for commit signing)
 
-Note: This project uses bash shell scripts, not Node.js or Bun runtime. The `bun.sh` is an environment setup/verification script.
+Note: This project uses bash shell scripts. Bun is an optional runtime that can be used to run scripts via `bun run`, but all scripts work standalone in bash.
 
 ## Quick Start
 
@@ -20,6 +21,23 @@ Initialize your environment:
 ```
 
 This will verify all requirements and set up git hooks for security.
+
+### Using Bun (Optional)
+
+With Bun installed, you can run scripts via NPM-style commands:
+
+```bash
+bun run setup       # ./bun.sh
+bun run test        # tests/test_copy_branches_local.sh
+bun run copy-branches  # ./copy-repo-branches.sh <target-repo>
+```
+
+Or run scripts directly:
+
+```bash
+./bun.sh
+./copy-repo-branches.sh git@github.com:youruser/yourrepo.git
+```
 
 Secrets and testing
 -------------------

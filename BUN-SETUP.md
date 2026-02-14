@@ -11,6 +11,7 @@
 ### Required
 - **Bash** 4.0 or higher
 - **Git** 2.20 or higher
+- **Bun** 1.0 or higher (JavaScript runtime)
 - **SSH client** (for GitHub authentication)
 
 ### Optional
