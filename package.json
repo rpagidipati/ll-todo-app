@@ -6,6 +6,8 @@
   "scripts": {
     "setup": "./bun.sh",
     "test": "tests/test_copy_branches_local.sh",
+    "test:edit": "tests/edit-todo.test.sh",
+    "test:sort-filter": "tests/sort-filter.test.sh",
     "copy-branches": "./copy-repo-branches.sh"
   },
   "keywords": [
