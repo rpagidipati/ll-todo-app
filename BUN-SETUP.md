@@ -77,6 +77,22 @@ Checks that all required tools are available:
 [SUCCESS] Environment setup complete!
 ```
 
+## Running Tests
+
+### Via Bun NPM Script (Recommended)
+```bash
+bun run test
+```
+
+### Direct Bash Execution
+```bash
+./tests/test_copy_branches_local.sh
+```
+
+### Important: `bun test` vs `bun run test`
+- **`bun test`** ❌ Looks for JavaScript/TypeScript test files (`.test.ts`, `.spec.ts`)
+- **`bun run test`** ✅ Executes the bash test script defined in `package.json`
+
 ## Troubleshooting
 
 ### "bun.sh: command not found"

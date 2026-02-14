@@ -27,10 +27,12 @@ This will verify all requirements and set up git hooks for security.
 With Bun installed, you can run scripts via NPM-style commands:
 
 ```bash
-bun run setup       # ./bun.sh
-bun run test        # tests/test_copy_branches_local.sh
-bun run copy-branches  # ./copy-repo-branches.sh <target-repo>
+bun run setup           # ./bun.sh
+bun run test            # tests/test_copy_branches_local.sh  
+bun run copy-branches   # ./copy-repo-branches.sh <target-repo>
 ```
+
+Note: `bun test` runs JavaScript/TypeScript tests. Use `bun run test` to run our bash test script.
 
 Or run scripts directly:
 
